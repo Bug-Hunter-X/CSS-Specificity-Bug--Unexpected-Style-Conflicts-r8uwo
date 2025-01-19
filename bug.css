@@ -1,0 +1,21 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+div {
+  color: blue;
+}
+
+.container div {
+  color: red;
+}
+
+#specific-div {
+  color: green;
+}
+
+#specific-div.container {
+  color: purple;
+}
+```
+
+In this case, the `#specific-div.container` selector is more specific than `.container div` because it uses both an ID and a class. As a result, the final color applied will be purple, not red. This can lead to unexpected behavior if developers are not aware of the specificity rules of CSS selectors.  This often appears as an issue when inheriting styles and not properly overriding them.
